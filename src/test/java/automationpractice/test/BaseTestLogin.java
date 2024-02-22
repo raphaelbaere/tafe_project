@@ -1,13 +1,12 @@
 package automationpractice.test;
 
-
-import automationpractice.data.factory.seleniumfactory.SeleniumService;
 import org.junit.After;
 import org.junit.Before;
+import automationpractice.data.factory.seleniumfactory.SeleniumFactory;
 
 public class BaseTestLogin {
 
-    SeleniumService seleniumFactory = new SeleniumService();
+    SeleniumFactory seleniumFactory = new SeleniumFactory();
 
     @Before
     public void abrirNavegador() {

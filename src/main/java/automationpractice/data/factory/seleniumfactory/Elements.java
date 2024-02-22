@@ -5,7 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class Elements extends SeleniumService {
+public class Elements extends SeleniumFactory {
     // Método para pegar um elemento
     public static WebElement element(By by) {
         return driver.findElement(by);

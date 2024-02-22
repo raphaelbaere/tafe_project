@@ -1,5 +1,4 @@
 package automationpractice.test;
-import io.qameta.allure.*;
 import org.junit.Assert;
 import org.junit.Test;
 import automationpractice.data.dto.LoginDTO;
@@ -12,10 +11,6 @@ public class LoginTest extends BaseTestLogin {
     LoginData loginData = new LoginData();
 
     @Test
-    @Feature("Login")
-    @Story("Login valido com sucesso")
-    @Description("Testa se o usuário consegue efetuar o login com dados validos e se de fato esta logado na pagina")
-    @Severity(SeverityLevel.CRITICAL)
     public void validarLoginComDadosValidos(){
         LoginDTO usuario = loginData.loginDadosValidos();
         loginPage.preencherCampoEmail(usuario.getEmail());
@@ -26,10 +21,6 @@ public class LoginTest extends BaseTestLogin {
     };
 
     @Test
-    @Feature("Login")
-    @Story("Login invalido com mensagem de erro")
-    @Description("Testa se o usuário ao efetuar login com dados invalidos recebe a mensagem apropriada")
-    @Severity(SeverityLevel.CRITICAL)
     public void validarLoginDadosInvalidos() {
         LoginDTO usuario = loginData.loginDadosDinamicos();
         loginPage.preencherCampoEmail(usuario.getEmail());
@@ -40,10 +31,6 @@ public class LoginTest extends BaseTestLogin {
     }
 
     @Test
-    @Feature("Login")
-    @Story("Login com campos vazios")
-    @Description("Testa se o usuário ao efetuar login sem preencher nenhum campo recebe a mensagem apropriada")
-    @Severity(SeverityLevel.CRITICAL)
     public void validarLoginTodosDadosVazios(){
         LoginDTO usuario = loginData.loginCamposVazios();
         loginPage.preencherCampoEmail(usuario.getEmail());
@@ -54,10 +41,6 @@ public class LoginTest extends BaseTestLogin {
     }
 
     @Test
-    @Feature("Login")
-    @Story("Login com email valido e senha vazia")
-    @Description("Testa se o usuário ao efetuar login preenchendo um email valido e nao inserindo uma senha recebe a mensagem apropriada")
-    @Severity(SeverityLevel.CRITICAL)
     public void validarLoginComEmailValidoESenhaVazia(){
         LoginDTO usuario = loginData.loginComEmailValidoSemSenha();
         loginPage.preencherCampoEmail(usuario.getEmail());
@@ -68,10 +51,6 @@ public class LoginTest extends BaseTestLogin {
     }
 
     @Test
-    @Feature("Login")
-    @Story("Login com email invalido")
-    @Description("Testa se o usuário ao efetuar login preenchendo um email invalido recebe a mensagem apropriada")
-    @Severity(SeverityLevel.CRITICAL)
     public void validarLoginComEmailInvalido(){
         LoginDTO usuario = loginData.loginEmailInvalido();
         loginPage.preencherCampoEmail(usuario.getEmail());

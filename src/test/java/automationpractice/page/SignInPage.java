@@ -26,8 +26,7 @@ public class SignInPage extends BasePage {
             By.cssSelector("#center_column > div > ol > li");
     private static final By loggedAs =
             By.cssSelector("#header > div.nav > div > div > nav > div:nth-child(1) > a > span");
-    private static final By divError =
-            By.cssSelector("#center_column > div");
+
     public ArrayList<String> registrarUsuarioValido(SignInDTO signINDTO) {
         if (signINDTO.getTitle() == "1") {
             clicar(radioBtnTitleMr);
@@ -80,35 +79,5 @@ public class SignInPage extends BasePage {
         clicarEsperandoSerClicavel(btnRegister);
 
         return lerTexto(msgError);
-    }
-
-    public String registrarUsuarioInvalidoJaExistente(SignInDTO signInDTO) {
-        if (signInDTO.getTitle() == "1") {
-            clicarEsperandoSerClicavel(radioBtnTitleMr);
-        } else {
-            clicarEsperandoSerClicavel(radioBtnTitleMrs);
-        }
-        preencherInput(campoFirstName, signInDTO.getFirstName());
-        preencherInput(campoLastName, signInDTO.getLastName());
-        clearTexto(campoEmail);
-        preencherInput(campoEmail, "baereraphael@gmail.com");
-        preencherInput(campoPassword, signInDTO.getPassword());
-
-        By dayBy = By.cssSelector("#account-creation_form > div.account_creation > div:nth-child(7) > div >div:nth-child(1) > div > select > option:nth-child(" + (signInDTO.getDayOfBirth()) + ")");
-        clicarEsperandoSerClicavel(dayBy);
-        By monthBy = By.cssSelector("#account-creation_form > div.account_creation > div:nth-child(7) > div >div:nth-child(2) > div > select > option:nth-child(" + (signInDTO.getMonthOfBirth()) + ")");
-        clicarEsperandoSerClicavel(monthBy);
-        By yearBy = By.cssSelector("#account-creation_form > div.account_creation > div:nth-child(7) > div >div:nth-child(3) > div > select > option:nth-child(" + (signInDTO.getYearOfBirth()) + ")");
-        clicarEsperandoSerClicavel(yearBy);
-
-        clicarEsperandoSerClicavel(btnRegister);
-
-        return lerTexto(msgError);
-    }
-
-    public String registrarUsuarioComTodosOsCamposVazios() {
-        clicarEsperandoSerClicavel(btnRegister);
-
-        return lerTexto(divError);
     }
 }

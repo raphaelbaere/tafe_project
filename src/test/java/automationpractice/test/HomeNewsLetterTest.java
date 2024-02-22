@@ -1,6 +1,5 @@
 package automationpractice.test;
 
-import io.qameta.allure.*;
 import org.junit.Assert;
 import org.junit.Test;
 import automationpractice.data.factory.datafaker.NewsletterEmailData;
@@ -14,10 +13,6 @@ public class HomeNewsLetterTest extends BaseTest {
     NewsletterEmailData factory = new NewsletterEmailData();
 
     @Test
-    @Feature("Newsletter")
-    @Story("Inscricao com email valido")
-    @Description("Testa se o usuário consegue se inscrever no NewsLetter com um email valido, deve retornar mensagem de sucesso")
-    @Severity(SeverityLevel.MINOR)
     public void validarUmaInscricaoNewsLetterComEmailValido() {
         String response = homePage.enviarEmailNewsletter(factory.getDTOcomEmailValido().getEmail());
 
@@ -25,10 +20,6 @@ public class HomeNewsLetterTest extends BaseTest {
     }
 
     @Test
-    @Feature("Newsletter")
-    @Story("Inscricao com email ja existente")
-    @Description("Testa se o usuário recebe mensagem de erro ao tentar inscrever email ja anteriormente cadastrado")
-    @Severity(SeverityLevel.MINOR)
     public void validarMensagemDeEmailRepetido() {
         String response = homePage.enviarEmailNewsletter(factory.getDTOcomEmailExistente().getEmail());
 
@@ -36,10 +27,6 @@ public class HomeNewsLetterTest extends BaseTest {
     }
 
     @Test
-    @Feature("Newsletter")
-    @Story("Inscricao com email invalido")
-    @Description("Testa se o usuário recebe mensagem de erro ao tentar inscrever email com formatacao invalida")
-    @Severity(SeverityLevel.MINOR)
     public void validarMensagemDeEmailInvalido() {
         String response = homePage.enviarEmailNewsletter(factory.getDTOcomEmailVazio().getEmail());
 

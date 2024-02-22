@@ -1,9 +1,9 @@
 package automationpractice.utils;
 
-import automationpractice.data.factory.seleniumfactory.SeleniumService;
 import org.openqa.selenium.JavascriptExecutor;
+import automationpractice.data.factory.seleniumfactory.SeleniumFactory;
 
-public class Scroll extends SeleniumService {
+public class Scroll extends SeleniumFactory {
 
     private static JavascriptExecutor js = (JavascriptExecutor) driver;
 
