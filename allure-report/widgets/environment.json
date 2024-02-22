@@ -1,0 +1,10 @@
+[ {
+  "values" : [ "121.0.6167.161" ],
+  "name" : "browser.version"
+}, {
+  "values" : [ "chrome" ],
+  "name" : "browser"
+}, {
+  "values" : [ "http://www.automationpractice.pl/index.php" ],
+  "name" : "application_url"
+} ]
